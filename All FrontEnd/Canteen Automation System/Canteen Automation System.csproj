@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ChefController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -283,6 +284,14 @@
     <Content Include="Views\Admin\Reviews.cshtml" />
     <Content Include="Views\Admin\AddFoodItems.cshtml" />
     <Content Include="Views\Admin\AddFoodCategories.cshtml" />
+    <Content Include="Views\Shared\_Layout1.cshtml" />
+    <Content Include="Views\Chef\Index.cshtml" />
+    <Content Include="Views\Chef\DetailsOrder.cshtml" />
+    <Content Include="Views\Chef\PendingOrders.cshtml" />
+    <Content Include="Views\Chef\CompletedOrders.cshtml" />
+    <Content Include="Views\Admin\ViewDetail.cshtml" />
+    <Content Include="Views\Chef\DetailsOrder1.cshtml" />
+    <Content Include="Views\Chef\DetailsOrder2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
