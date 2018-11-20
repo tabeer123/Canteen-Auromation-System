@@ -6,39 +6,41 @@ using System.Web.Mvc;
 
 namespace Canteen_Automation_System.Controllers
 {
-    public class HomeController : Controller
+    public class AdminController : Controller
     {
+        // GET: Admin
         public ActionResult Index()
         {
             return View();
         }
+      
 
-        public ActionResult About()
+        public ActionResult ManageFoodItems()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
-
-        public ActionResult TrackOrder()
-        {
-
-            return View();
-        }
-
-        public ActionResult Login()
+        public ActionResult AddFoodItems()
         {
             return View();
         }
 
-        public ActionResult SignUp()
-        {
-            return View();
-        }
 
-        public ActionResult Cart()
+        public ActionResult ManageFoodCategories()
         {
             return View();
         }
+        public ActionResult AddFoodCategories()
+        {
+            return View();
+        }
+        public ActionResult OrdersReport()
+        {
+            return View();
+        }
+        public ActionResult Reviews()
+        {
+            return View();
+        }
+        
     }
 }
