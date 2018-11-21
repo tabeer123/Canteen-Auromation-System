@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "ManageFoodItems";
+    Layout = "~/Views/Shared/AdminLayoutPage.cshtml";
+}
+
+<h2>Manage Food Items</h2>
+<div style="padding-right:20px"></div>
+<button type="button" style="" class="btn btn-light" onclick="window.location='/Admin/AddFoodItems'">Add Food Items</button>
+
+
+
+<style>
+    .table {
+        padding: 40px;
+    }
+</style>
+
+<div style="height:60px"></div>
+
+<div style="padding-left:40px; padding-right:40px">
+    <table class="table table-bordered table-responsive table-hover">
+        <tr class="table">
+            <th>Name </th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Action</th>
+
+        </tr>
+        <tr>
+            <td>Chicken fingers</td>
+            <td>Starter</td>
+            <td>450</td>
+            <td>
+                <button id="myBtn" onclick="javascript:alert('Food has been Deleted')">Delete</button>
+                <div style="padding-right:20px"></div>
+            </td>
+
+        </tr>
+        <tr>
+            <td>Onion Rings</td>
+            <td>Starter</td>
+            <td>350</td>
+            <td>
+                <button id="myBtn" onclick="javascript:alert('Food has been Deleted')">Delete</button>
+                <div style="padding-right:20px"></div>
+            </td>
+
+        </tr>
+        <tr>
+            <td>Taragon Chicken</td>
+            <td>Main Course</td>
+            <td>950</td>
+            <td>
+                <button id="myBtn" onclick="javascript:alert('Food has been Deleted')">Delete</button>
+                <div style="padding-right:20px"></div>
+            </td>
+
+        </tr>
+        <tr>
+            <td>Molten Lava</td>
+            <td>Sweets</td>
+            <td>800</td>
+            <td>
+                <button id="myBtn" onclick="javascript:alert('Food has been Deleted')">Delete</button>
+                <div style="padding-right:20px"></div>
+            </td>
+
+        </tr>
+        <tr>
+            <td>Cold Coffee</td>
+            <td>Drinks</td>
+            <td>300</td>
+            <td>
+                <button id="myBtn" onclick="javascript:alert('Food has been Deleted')">Delete</button>
+                <div style="padding-right:20px"></div>
+            </td>
+
+        </tr>
+
+    </table>
+</div>
+<div style="height:60px"></div>
+

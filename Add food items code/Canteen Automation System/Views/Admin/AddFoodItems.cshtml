@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "AddFoodItems";
+    Layout = "~/Views/Shared/AdminLayoutPage.cshtml";
+}
+
+<h2>Add Food Items</h2>
+
+<style>
+    .writings {
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .textbox {
+        align-self: center;
+        padding: 40px;
+    }
+</style>
+
+<div class="textbox">
+
+    <input type="text" class="form-control" placeholder="Food Name">
+    <div style="height:20px"></div>
+
+
+    <select class="form-control" id="sel1">
+        <option>Food Category</option>
+        <option>Starter</option>
+        <option>Main Course</option>
+        <option>Sweets</option>
+        <option>Drinks</option>
+    </select>
+    <div style="height:20px"></div>
+
+
+    <input type="text" class="form-control" placeholder="Food Price">
+    <div style="height:20px"></div>
+
+
+
+    <button id="myBtn" onclick="javascript:alert('Food has been added')">Add Food</button>
+    <div style="padding-right:20px"></div>
+</div>
+
+
