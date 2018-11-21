@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<style>
+    .table {
+        padding: 40px;
+    }
+    .writing {
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    
+</style>
+
+<div style="height:60px"></div>
+
+<div style="padding-left:40px; padding-right:40px">
+    <h2 style="padding-bottom: 40px;">All Orders</h2>
+    <table class="table table-bordered table-responsive table-hover">
+        <tr class="table">
+            <th>Order ID </th>
+            <th>Dated</th>
+            <th>Total items</th>
+            <th>Status</th>
+            <th>View Details </th>
+
+        </tr>
+        <tr>
+            <td>123-A1</td>
+            <td>17-11-18</td>
+            <td>6</td>
+            <td>Complete</td>
+            <td>
+                <a href="/Chef/DetailsOrder" class="smoothScroll">View Details</a>
+            </td>
+
+        </tr>
+        <tr>
+            <td>123-A3</td>
+            <td>17-11-18</td>
+            <td>8</td>
+            <td>Pending</td>
+            <td><a href="/Chef/DetailsOrder" class="smoothScroll">View Details</a>
+</td>
+
+        </tr>
+        <tr>
+            <td>123-A4</td>
+            <td>17-11-18</td>
+            <td>5</td>
+            <td>Complete</td>
+            <td><a href="/Chef/DetailsOrder" class="smoothScroll">View Details</a>
+</td>
+
+        </tr>
+    
+
+    </table>
+</div>
+<div style="height:60px"></div>
+
+

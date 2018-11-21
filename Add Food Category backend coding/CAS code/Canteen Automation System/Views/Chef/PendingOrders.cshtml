@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "PendingOrders";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<style>
+    .table {
+        padding: 40px;
+    }
+</style>
+
+
+<div style="height:60px"></div>
+
+<div style="padding-left:40px; padding-right:40px">
+    <h2 style="padding-bottom: 40px;">Your Pending Orders</h2>
+    <table class="table table-bordered table-responsive table-hover">
+        <tr class="table">
+            <th>Order ID </th>
+            <th>Dated</th>
+            <th>Total items</th>
+            <th>Status</th>
+            <th>View Details </th>
+            <th>Change Status</th>
+
+        </tr>
+        <tr>
+            <td>123-A1</td>
+            <td>17-11-18</td>
+            <td>6</td>
+            <td>Pending</td>
+            <td>
+                <a href="/Chef/DetailsOrder" class="smoothScroll">View Details</a>
+            </td>
+          
+            <td><button id="myBtn" onclick="javascript:alert('Your Order Has Been Dispatched!!!!')">Complete</button></td>
+
+        </tr>
+        <tr>
+            <td>123-A3</td>
+            <td>17-11-18</td>
+            <td>8</td>
+            <td>Pending</td>
+            <td>
+                <a href="/Chef/DetailsOrder" class="smoothScroll">View Details</a>
+            </td>
+            <td><button id="myBtn" onclick="javascript:alert('Your Order Has Been Dispatched!!!!')">Complete</button></td>
+
+        </tr>
+     
+
+
+    </table>
+</div>
+<div style="height:60px"></div>
+
+
+
+
