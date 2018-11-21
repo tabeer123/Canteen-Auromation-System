@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Reviews";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Reviews</h2>
+<style>
+    .table {
+        padding: 40px;
+    }
+</style>
+
+<div style="height:60px"></div>
+
+<div style="padding-left:40px; padding-right:40px">
+    <table class="table table-bordered table-responsive table-hover">
+        <tr class="table">
+            <th>Sr No.</th>
+            <th>Reviews details</th>
+        </tr>
+@foreach (Review R in ViewBag.ReviewList)
+{
+        <tr>
+            <td>@R.ReviewId</td>
+            <td>@R.Text</td>
+            </tr>
+    }
+     </table>
+</div>
+<div style="height:60px"></div>

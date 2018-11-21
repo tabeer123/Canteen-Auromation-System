@@ -1,0 +1,21 @@
+﻿@model Canteen_Automation_System.Models.ReviewViewModel
+@{
+    ViewBag.Title = "Review";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .area{
+        padding:100px;
+    }
+</style>
+@using (Html.BeginForm("Review", "Home", FormMethod.Post))
+{
+<div class="area">
+        <h2>Leave your Reviews here</h2>
+    <div>
+        @Html.TextAreaFor(model => model.Text,  new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <button type="submit" style="float:left;" class="btn btn-light">Submit Review</button>
+</div>
+}
+
