@@ -13,10 +13,13 @@ namespace Canteen_Automation_System.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.listProduct = db.FoodItems.ToList();
+
             return View();
         }
         public ActionResult About()
         {
+            
             ViewBag.Message = "Your application description page.";
 
             return View();
@@ -71,10 +74,49 @@ namespace Canteen_Automation_System.Controllers
         {
             return View();
         }
-
-        public ActionResult Cart()
+        private int isPresent(int id)
         {
-            return View();
+            List<Cart> cart = (List<Cart>)Session["cart"];
+            for (int j = 0; j < cart.Count; j++)
+            {
+                if (cart[j].NewFood1.FoodId == id)
+                {
+                    return j;
+                }
+               
+            }
+            return -1;
+
+        }
+        public ActionResult Cart(int id)
+
+
+        { 
+
+            if (Session["cart"] == null)
+            {
+                List<Cart> cart = new List<Cart>();
+        cart.Add(new Cart(db.FoodItems.Find(id), 1));
+                Session["cart"] = cart;
+            }
+            else
+            {
+                List<Cart> cart = (List < Cart > )Session["cart"];
+                int index = isPresent(id);
+                if(index == -1)
+                {
+                    cart.Add(new Cart(db.FoodItems.Find(id), 1));
+                   
+                }
+                else
+                {
+                    cart[index].Quantity++;
+                }
+                
+                Session["cart"] = cart;
+            }
+
+            return View("Cart");
         }
     }
 }

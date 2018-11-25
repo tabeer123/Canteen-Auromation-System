@@ -1,8 +1,7 @@
-﻿
+﻿@model Canteen_Automation_System.Models.FoodItemViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 
 <style>
     .table{
@@ -15,53 +14,27 @@
 <div style="padding-left:40px; padding-right:40px">
     <table class="table table-bordered table-responsive table-hover">
         <tr class="table">
+            <th>ID </th>
             <th>Name </th>
             <th>Description</th>
             <th>Price</th>
             <th>Quantity</th>
             <th>Add to Cart </th>
         </tr>
-        <tr>
-            <td>Burger</td>
-            <td>What could be the description</td>
-            <td>40.98</td>
-            <td><input type="number" name="quantity" value="0" min="0" max="5"></td>
-            <td><button class="editbtn">Add to Cart</button></td>
+        @foreach (FoodItem f in ViewBag.listProduct)
+        {
+            <tr>
+                <td>@f.FoodId</td>
+                <td>@f.Name</td>
+                <td>@f.Category</td>
+                <td>@f.Price</td>
+                <td><input type="number" name="quantity" value="0" min="0" max="5"></td>
+               
+                <td align="center">@Html.ActionLink("Add to Cart", "Cart", "Home", new { id = f.FoodId}, null)</td>
+</tr>
+        }
 
-        </tr>
-        <tr>
-            <td>Burger</td>
-            <td>What could be the description</td>
-            <td>40.98</td>
-            <td><input type="number" name="quantity" value="0" min="0" max="5"></td>
-            <td><button class="editbtn">Add to Cart</button></td>
-
-        </tr>
-        <tr>
-            <td>Burger</td>
-            <td>What could be the description</td>
-            <td>40.98</td>
-            <td><input type="number" name="quantity" value="0" min="0" max="5"></td>
-            <td><button class="editbtn">Add to Cart</button></td>
-
-        </tr>
-        <tr>
-            <td>Burger</td>
-            <td>What could be the description</td>
-            <td>40.98</td>
-            <td><input type="number" name="quantity" value="0" min="0" max="5"></td>
-            <td><button class="editbtn">Add to Cart</button></td>
-
-        </tr>
-        <tr>
-            <td>Burger</td>
-            <td>What could be the description</td>
-            <td>40.98</td>
-            <td><input type="number" name="quantity" value="0" min="0" max="5"></td>
-            <td><button class="editbtn">Add to Cart</button></td>
-
-        </tr>
-
+       
     </table>
 </div>
 <div style="height:60px"></div>
