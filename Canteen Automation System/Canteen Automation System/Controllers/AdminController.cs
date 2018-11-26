@@ -19,6 +19,8 @@ namespace Canteen_Automation_System.Controllers
 
         public ActionResult ManageFoodItems()
         {
+            ViewBag.listProduct = db.FoodItems.ToList();
+
             return View();
         }
 
@@ -59,6 +61,8 @@ namespace Canteen_Automation_System.Controllers
 
         public ActionResult ManageFoodCategories()
         {
+            ViewBag.listProduct = db.Categories.ToList();
+
             return View();
         }
         [HttpPost]

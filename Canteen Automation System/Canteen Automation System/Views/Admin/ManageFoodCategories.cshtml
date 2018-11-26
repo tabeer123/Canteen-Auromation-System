@@ -91,10 +91,10 @@
             </style>
 
             <div class="textbox">
-
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
                 <div style="height:20px"></div>
-
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
                 <div style="height:20px"></div>
 
@@ -151,41 +151,23 @@ window.onclick = function(event) {
 <div style="padding-left:40px; padding-right:40px">
     <table class="table table-bordered table-responsive table-hover">
         <tr class="table">
+          
             <th>Name </th>
             <th>Description</th>
-            <th>Actions</th>
-           
+         
+            <th>Delete</th>
         </tr>
-        <tr>
-            <td>Starter</td>
-            <td>Description of the food category here goes</td>
-            <td><button id="myBtn" onclick="javascript:alert('Food Category has been Deleted')">Delete</button>
-<div style="padding-right:20px"></div></td>
+        @foreach (Category f in ViewBag.listProduct)
+        {
+            <tr>
+                <td>@f.Name</td>
+                <td>@f.Description</td>
+                
 
-        </tr>
-        <tr>
-            <td>Main Course</td>
-            <td>Description of the food category here goes</td>
-            <td><button id="myBtn" onclick="javascript:alert('Food Category has been Deleted')">Delete</button>
-<div style="padding-right:20px"></div></td>
-            
-        </tr>
-        <tr>
-            <td>Sweets</td>
-            <td>Description of the food category here goes</td>
-            <td><button id="myBtn" onclick="javascript:alert('Food Category has been Deleted')">Delete</button>
-            <div style="padding-right:20px"></div>
-            </td>
-            
 
-        </tr>
-        <tr>
-            <td>Drinks</td>
-            <td>Description of the food category here goes</td>
-            <td><button id="myBtn" onclick="javascript:alert('Food Category has been Deleted')">Delete</button>
-<div style="padding-right:20px"></div></td>
-
-        </tr>
+                <td> <button id="myBtn" type="button" class="btn btn-light">Delete</button></td>
+            </tr>
+        }
 
 
     </table>
