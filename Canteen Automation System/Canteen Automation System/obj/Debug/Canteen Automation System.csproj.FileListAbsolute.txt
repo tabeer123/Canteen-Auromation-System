@@ -1,0 +1,84 @@
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\ApplicationInsights.config
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\roslyn\csc.exe
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\roslyn\vbc.exe
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\roslyn\VBCSCompiler.exe
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Canteen Automation System.dll.config
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Canteen Automation System.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Canteen Automation System.pdb
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Antlr3.Runtime.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\EntityFramework.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\EntityFramework.SqlServer.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.AI.Web.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.Security.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Newtonsoft.Json.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Owin.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\System.Web.Helpers.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\System.Web.Mvc.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\System.Web.Optimization.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\System.Web.Razor.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\System.Web.WebPages.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\System.Web.WebPages.Razor.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\WebGrease.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.AI.Web.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\System.Web.Helpers.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\System.Web.Mvc.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\System.Web.Optimization.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\System.Web.Razor.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\System.Web.WebPages.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\System.Web.WebPages.Razor.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Antlr3.Runtime.pdb
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Newtonsoft.Json.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\EntityFramework.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\EntityFramework.SqlServer.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.Security.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\obj\Debug\Canteen Automation System.csproj.CoreCompileInputs.cache
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\obj\Debug\Canteen Automation System.csproj.CopyComplete
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\obj\Debug\Canteen Automation System.dll
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\obj\Debug\Canteen Automation System.pdb
+C:\Users\Tania\Desktop\HN\New folder\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\obj\Debug\Canteen Automation System.csprojAssemblyReference.cache

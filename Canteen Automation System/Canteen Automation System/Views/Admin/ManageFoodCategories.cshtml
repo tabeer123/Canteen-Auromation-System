@@ -1,0 +1,175 @@
+﻿@model Canteen_Automation_System.Models.FoodCategoryViewModel
+@{
+    ViewBag.Title = "ManageFoodCategories";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+<style>
+    .writings {
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .textbox {
+        align-self: center;
+        padding: 40px;
+    }
+
+    .modal {
+        margin-top: 7%;
+    }
+
+    .modal-content {
+        position: relative;
+        background-color: white;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        width: 80%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+    }
+
+    /* The Close Button */
+    .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    .modal-header {
+        padding: 2px 16px;
+        background-color: white;
+        color: black;
+    }
+
+    .modal-body {
+        padding: 2px 16px;
+    }
+
+    .modal-footer {
+        padding: 2px 16px;
+        background-color: white;
+        color: black;
+    }
+</style>
+
+<h2>Manage Food Category</h2>
+<div style="padding-right:20px"></div>
+<button id="myBtn" class="btn btn-light">Add Food Category</button>
+@using (Html.BeginForm("ManageFoodCategories", "Admin", FormMethod.Post)) { 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Add Food Category</h2>
+            <style>
+                .writings {
+                    padding-top: 50px;
+                    padding-left: 50px;
+                    padding-right: 50px;
+                }
+
+                .textbox {
+                    align-self: center;
+                    padding: 40px;
+                }
+            </style>
+
+            <div class="textbox">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                <div style="height:20px"></div>
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                <div style="height:20px"></div>
+
+
+
+
+                <button type="submit" style="float:right;padding-right:30px" class="btn btn-light">Add Food Category</button>
+                <div style="padding-right:20px"></div>
+            </div>
+                <div style="padding-right:20px"></div>
+            </div>
+
+        </div>
+    </div>
+}
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+
+<style>
+    .table {
+        padding: 40px;
+    }
+</style>
+
+<div style="height:60px"></div>
+
+<div style="padding-left:40px; padding-right:40px">
+    <table class="table table-bordered table-responsive table-hover">
+        <tr class="table">
+          
+            <th>Name </th>
+            <th>Description</th>
+         
+            <th>Delete</th>
+        </tr>
+        @foreach (Category f in ViewBag.listProduct)
+        {
+            <tr>
+                <td>@f.Name</td>
+                <td>@f.Description</td>
+                
+
+
+                <td> <button id="myBtn" type="button" class="btn btn-light">Delete</button></td>
+            </tr>
+        }
+
+
+    </table>
+</div>
+<div style="height:60px"></div>
