@@ -1,11 +1,14 @@
-﻿@model Canteen_Automation_System.Controllers.Cart
+﻿
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "DeleteFoodItems";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
 }
 
+<h2>DeleteFoodItems</h2>
+
 <style>
-    .table{
-        padding:40px;
+    .table {
+        padding: 40px;
     }
 </style>
 
@@ -18,24 +21,23 @@
             <th>Name </th>
             <th>Description</th>
             <th>Price</th>
-            <th>Quantity</th>
-            <th>Add to Cart </th>
+            <th>Delete</th>
         </tr>
         @foreach (FoodItem f in ViewBag.listProduct)
         {
-            
             <tr>
                 <td>@f.FoodId</td>
                 <td>@f.Name</td>
                 <td>@f.Category</td>
                 <td>@f.Price</td>
-                <td>@Html.TextBoxFor(model => model.Quantity, new { @type = "number", @value = 1, @max = 1, @min = 1 })</td>
-               
-                <td align="center">@Html.ActionLink("Add to Cart", "Cart", "Home", new { id = f.FoodId }, null)</td>
-</tr>
+
+
+                <td align="center">@Html.ActionLink("Delete", "DeleteFoodItems", "Admin", new { id = @f.FoodId }, null)</td>
+            </tr>
         }
 
-       
+
     </table>
 </div>
 <div style="height:60px"></div>
+

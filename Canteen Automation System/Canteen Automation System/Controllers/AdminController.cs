@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Canteen_Automation_System.Models;
+using System.Net;
 
 namespace Canteen_Automation_System.Controllers
 {
@@ -35,7 +36,7 @@ namespace Canteen_Automation_System.Controllers
                 food.Category = obj.Category;
                 db.FoodItems.Add(food);
                 db.SaveChanges();
-                return RedirectToAction("OrdersReport");
+                return RedirectToAction("ManageFoodItems");
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
             {
@@ -53,11 +54,16 @@ namespace Canteen_Automation_System.Controllers
                 throw raise;
             }
         }
-        //public ActionResult AddFoodItems()
-        //{
-        //    return View();
-        //}
+        public ActionResult DeleteFoodItems(int id)
+        {
+            FoodItem f = db.FoodItems.Find(id);
+            db.FoodItems.Remove(f);
+            db.SaveChanges();
+            ViewBag.listProduct = db.FoodItems.ToList();
 
+            return View();
+
+        }
 
         public ActionResult ManageFoodCategories()
         {
@@ -65,6 +71,22 @@ namespace Canteen_Automation_System.Controllers
 
             return View();
         }
+
+        public ActionResult DeleteFoodCategories(int id)
+        { 
+            Category c = db.Categories.Find(id);
+            db.Categories.Remove(c);
+            db.SaveChanges();
+            // return RedirectToAction("ManageFoodCategory");
+            ViewBag.listProduct = db.Categories.ToList();
+
+            return View();
+           
+        }
+
+       
+       
+
         [HttpPost]
         public ActionResult ManageFoodCategories(FoodCategoryViewModel obj)
         {
@@ -75,7 +97,7 @@ namespace Canteen_Automation_System.Controllers
                 C.Description = obj.Description;
                 db.Categories.Add(C);
                 db.SaveChanges();
-                return RedirectToAction("OrdersReport");
+                return RedirectToAction("ManageFoodCategories");
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
             {
@@ -94,11 +116,7 @@ namespace Canteen_Automation_System.Controllers
             }
         }
 
-
-        //public ActionResult AddFoodCategories()
-        //{
-        //    return View();
-        //}
+        
         public ActionResult OrdersReport()
         {
             return View();

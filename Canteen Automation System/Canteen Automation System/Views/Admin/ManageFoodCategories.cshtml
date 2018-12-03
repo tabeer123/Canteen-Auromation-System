@@ -163,9 +163,9 @@ window.onclick = function(event) {
                 <td>@f.Name</td>
                 <td>@f.Description</td>
                 
+                <td align="center">@Html.ActionLink("Delete", "DeleteFoodCategories", "Admin", new { id = @f.CategoryId }, null)</td>
 
-
-                <td> <button id="myBtn" type="button" class="btn btn-light">Delete</button></td>
+                
             </tr>
         }
 

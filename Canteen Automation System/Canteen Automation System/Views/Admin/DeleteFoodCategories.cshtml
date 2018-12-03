@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "DeleteFoodCategories";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>DeleteFoodCategories</h2>
+
+
+
+<style>
+    .table {
+        padding: 40px;
+    }
+</style>
+
+<div style="height:60px"></div>
+
+<div style="padding-left:40px; padding-right:40px">
+    <table class="table table-bordered table-responsive table-hover">
+        <tr class="table">
+
+            <th>Name </th>
+            <th>Description</th>
+
+            <th>Delete</th>
+        </tr>
+        @foreach (Category f in ViewBag.listProduct)
+        {
+            <tr>
+                <td>@f.Name</td>
+                <td>@f.Description</td>
+
+                <td align="center">@Html.ActionLink("Delete", "DeleteFoodCategories", "Admin", new { id = @f.CategoryId }, null)</td>
+
+
+            </tr>
+        }
+
+
+    </table>
+</div>
+<div style="height:60px"></div>
+

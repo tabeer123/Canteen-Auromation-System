@@ -180,8 +180,8 @@ window.onclick = function(event) {
                 <td>@f.Price</td>
                
 
-               <td> <button id="myBtn" type="button" class="btn btn-light">ORDER DETAILS</button></td>
-            </tr>
+                <td align="center">@Html.ActionLink("Delete", "DeleteFoodItems", "Admin", new { id = @f.FoodId }, null)</td>
+ </tr>
         }
 
 
