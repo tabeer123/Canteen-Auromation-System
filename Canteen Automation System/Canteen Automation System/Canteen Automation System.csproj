@@ -233,6 +233,7 @@
     <Compile Include="Models\FoodItemViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\OrderProductView.cs" />
     <Compile Include="Models\OrderViewModel.cs" />
     <Compile Include="Models\ReviewViewModel.cs" />
     <Compile Include="Order.cs">
@@ -347,6 +348,7 @@
     <Content Include="Views\Home\Review.cshtml" />
     <Content Include="Views\Admin\DeleteFoodCategories.cshtml" />
     <Content Include="Views\Admin\DeleteFoodItems.cshtml" />
+    <Content Include="Views\Admin\DetailsOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

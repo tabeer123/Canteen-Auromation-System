@@ -31,7 +31,7 @@
             double totalPrice = 0;
         }
         @foreach (Cart Cart in (List<Cart>)Session["cart"])
-        {
+        {  
             totalPrice = totalPrice + Cart.NewFood1.Price * Cart.Quantity;
 <tr>
     <td>@Cart.NewFood1.FoodId </td>

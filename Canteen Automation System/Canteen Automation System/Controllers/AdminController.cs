@@ -119,7 +119,33 @@ namespace Canteen_Automation_System.Controllers
         
         public ActionResult OrdersReport()
         {
+            ViewBag.listProduct = db.Orders.ToList();
+
             return View();
+        }
+        public ActionResult DetailsOrder(int Id)
+        {
+            List<OrderProduct> list = new List<OrderProduct>();
+            foreach (OrderProduct p in db.OrderProducts)
+            {
+                if (p.OrderId == Id)
+                {
+                    OrderProduct p1 = new OrderProduct();
+                    p1.OrderId = p.OrderId;
+                    p1.ProductId = p.ProductId;
+                    p1.ProductName = p.ProductName;
+                    p1.Price = p.Price;
+                    p1.Quantity = p.Quantity;
+
+                    list.Add(p1);
+
+                }
+            }
+            ViewBag.ListProduct = list;
+
+            return View();
+
+
         }
         public ActionResult Reviews()
         {

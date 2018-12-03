@@ -1,8 +1,9 @@
-﻿@model Canteen_Automation_System.Models.OrderProductView
+﻿
 @{
-
-    Layout = "~/Views/Shared/_Layout1.cshtml";
+    ViewBag.Title = "DetailsOrder";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
 }
+
 <style>
     .table {
         padding: 40px;
@@ -26,7 +27,7 @@
             <th>Product Name</th>
             <th>Price</th>
             <th>Quantity</th>
-           
+
         </tr>
         @foreach (OrderProduct f in ViewBag.listProduct)
         {
@@ -45,5 +46,6 @@
 </div>
 <div style="height:60px"></div>
 
-        <button type="button" class="btn btn-light" onclick="window.location='/Chef/Index'">BACK</button>
+<button type="button" class="btn btn-light" onclick="window.location='/Admin/OrdersReport'">BACK</button>
+
 

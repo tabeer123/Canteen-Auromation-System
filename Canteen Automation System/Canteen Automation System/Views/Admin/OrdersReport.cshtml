@@ -17,67 +17,24 @@
 <div style="padding-left:40px; padding-right:40px">
     <table class="table table-bordered table-responsive table-hover">
         <tr class="table">
-            <th>Order ID </th>
-            <th>Dated</th>
+            <th>OrderId </th>
+            <th>Date </th>
             <th>Total Items</th>
-            <th>Total Price</th>
             <th>Status</th>
-            <th>Details</th>
+            <th>View Details</th>
         </tr>
-        <tr>
-            <td>123_Or1</td>
-            <td>17-11-18</td>
-            <td>2</td>
-            <td>130</td>
-            <td>Completed</td>
-            <td><button class="editbtn">View Details</button></td>
+        @foreach (Order f in ViewBag.listProduct)
+        {
+            <tr>
+                <td>@f.OrderId</td>
+                <td>@f.Date</td>
+                <td>@f.Items</td>
+                <td>@f.Status</td>
 
-        </tr>
-        <tr>
-            <td>123_Or2</td>
-            <td>17-11-18</td>
-            <td>5</td>
-            <td>200</td>
-            <td>Pending</td>
-            <td><button class="editbtn">View Details</button></td>
 
-        </tr>
-        <tr>
-    <td>123_Or3</td>
-    <td>17-11-18</td>
-    <td>8</td>
-    <td>20</td>
-    <td>Completed</td>
-    <td><button class="editbtn">View Details</button></td>
-
-</tr>
-        <tr>
-            <td>123_Or4</td>
-            <td>17-11-18</td>
-            <td>5</td>
-            <td>130</td>
-            <td>Completed</td>
-            <td><button class="editbtn">View Details</button></td>
-
-        </tr>
-        <tr>
-            <td>123_Or5</td>
-            <td>17-11-18</td>
-            <td>9</td>
-            <td>550</td>
-            <td>Pending</td>
-            <td><button class="editbtn">View Details</button></td>
-
-        </tr>
-        <tr>
-            <td>123_Or6</td>
-            <td>17-11-18</td>
-            <td>10</td>
-            <td>900</td>
-            <td>Completed</td>
-            <td><button class="editbtn">View Details</button></td>
-
-        </tr>
+                <td align="center">@Html.ActionLink("Details", "DetailsOrder", "Admin", new { id = f.OrderId }, null)</td>
+            </tr>
+        }
 
 
     </table>
