@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewBag.Title = "CompleteOrderList";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>CompleteOrderList</h2>
+<style>
+    .table {
+        padding: 40px;
+    }
+
+    .table {
+        padding: 40px;
+    }
+
+    .writing {
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .modal {
+        margin-top: 7%;
+    }
+
+    .modal-content {
+        position: relative;
+        background-color: white;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        width: 80%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+    }
+
+    /* The Close Button */
+    .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    .modal-header {
+        padding: 2px 16px;
+        background-color: white;
+        color: black;
+    }
+
+    .modal-body {
+        padding: 2px 16px;
+    }
+
+    .modal-footer {
+        padding: 2px 16px;
+        background-color: white;
+        color: black;
+    }
+</style>
+
+
+<div style="height:60px"></div>
+
+<div style="padding-left:40px; padding-right:40px">
+    <table class="table table-bordered table-responsive table-hover">
+        <tr class="table">
+            <th>OrderId </th>
+            <th>Date </th>
+            <th>Total Items</th>
+            <th>Status</th>
+            <th>View Detail</th>
+
+
+        </tr>
+        @foreach (Order f in ViewBag.listProduct)
+        {
+            <tr>
+                <td>@f.OrderId</td>
+                <td>@f.Date</td>
+                <td>@f.Items</td>
+                <td>@f.Status</td>
+                <td align="center">@Html.ActionLink("Details", "DetailsOrder", "Chef", new { id = f.OrderId }, null)</td>
+
+
+            </tr>
+        }
+
+
+    </table>
+</div>
+<div style="height:60px"></div>
+
+@*<script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+    <div style="height:60px"></div>
+
+
+*@
