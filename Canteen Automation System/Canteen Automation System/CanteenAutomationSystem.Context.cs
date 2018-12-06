@@ -13,10 +13,10 @@ namespace Canteen_Automation_System
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CanteenAutomationSystemDbEntities2 : DbContext
+    public partial class CanteenAutomationSystemDbEntities3 : DbContext
     {
-        public CanteenAutomationSystemDbEntities2()
-            : base("name=CanteenAutomationSystemDbEntities2")
+        public CanteenAutomationSystemDbEntities3()
+            : base("name=CanteenAutomationSystemDbEntities3")
         {
         }
     
@@ -30,5 +30,6 @@ namespace Canteen_Automation_System
         public virtual DbSet<OrderProduct> OrderProducts { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

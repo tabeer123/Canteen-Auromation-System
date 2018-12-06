@@ -10,7 +10,7 @@ namespace Canteen_Automation_System.Controllers
 {
     public class AdminController : Controller
     {
-        private CanteenAutomationSystemDbEntities2 db = new CanteenAutomationSystemDbEntities2();
+        private CanteenAutomationSystemDbEntities3 db = new CanteenAutomationSystemDbEntities3();
         // GET: Admin
         public ActionResult Index()
         {
@@ -20,6 +20,13 @@ namespace Canteen_Automation_System.Controllers
 
         public ActionResult ManageFoodItems()
         {
+            List<string> categories = new List<string>();
+            foreach(Category c in db.Categories)
+            {
+                categories.Add(c.Name);
+            }
+            categories.Sort();
+            ViewBag.Categories = categories;
             ViewBag.listProduct = db.FoodItems.ToList();
 
             return View();

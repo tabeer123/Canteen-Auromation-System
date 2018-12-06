@@ -47,6 +47,15 @@
     <Property Name="ReviewId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RegisterAs" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
   <Association Name="FK_Order">
     <End Role="Orders" Type="Self.Order" Multiplicity="1" />
     <End Role="OrderProducts" Type="Self.OrderProduct" Multiplicity="*" />
@@ -59,12 +68,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="CanteenAutomationSystemDbEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="CanteenAutomationSystemDbEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Categories" EntityType="Self.Category" />
     <EntitySet Name="FoodItems" EntityType="Self.FoodItem" />
     <EntitySet Name="OrderProducts" EntityType="Self.OrderProduct" />
     <EntitySet Name="Orders" EntityType="Self.Order" />
     <EntitySet Name="Reviews" EntityType="Self.Review" />
+    <EntitySet Name="Users" EntityType="Self.User" />
     <AssociationSet Name="FK_Order" Association="Self.FK_Order">
       <End Role="Orders" EntitySet="Orders" />
       <End Role="OrderProducts" EntitySet="OrderProducts" />

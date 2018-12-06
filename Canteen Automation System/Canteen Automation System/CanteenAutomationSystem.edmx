@@ -50,6 +50,15 @@
           <Property Name="ReviewId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="RegisterAs" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Order">
           <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
           <End Role="OrderProducts" Type="Self.OrderProducts" Multiplicity="*" />
@@ -68,6 +77,7 @@
           <EntitySet Name="OrderProducts" EntityType="Self.OrderProducts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Order" Association="Self.FK_Order">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrderProducts" EntitySet="OrderProducts" />
@@ -125,6 +135,15 @@
           <Property Name="ReviewId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RegisterAs" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Order">
           <End Role="Orders" Type="Self.Order" Multiplicity="1" />
           <End Role="OrderProducts" Type="Self.OrderProduct" Multiplicity="*" />
@@ -137,12 +156,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="CanteenAutomationSystemDbEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CanteenAutomationSystemDbEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="FoodItems" EntityType="Self.FoodItem" />
           <EntitySet Name="OrderProducts" EntityType="Self.OrderProduct" />
           <EntitySet Name="Orders" EntityType="Self.Order" />
           <EntitySet Name="Reviews" EntityType="Self.Review" />
+          <EntitySet Name="Users" EntityType="Self.User" />
           <AssociationSet Name="FK_Order" Association="Self.FK_Order">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrderProducts" EntitySet="OrderProducts" />
@@ -153,7 +173,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CanteenAutomationSystemDbModelStoreContainer" CdmEntityContainer="CanteenAutomationSystemDbEntities2">
+        <EntityContainerMapping StorageEntityContainer="CanteenAutomationSystemDbModelStoreContainer" CdmEntityContainer="CanteenAutomationSystemDbEntities3">
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="CanteenAutomationSystemDbModel.Category">
               <MappingFragment StoreEntitySet="Categories">
@@ -201,6 +221,16 @@
               <MappingFragment StoreEntitySet="Reviews">
                 <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
                 <ScalarProperty Name="Text" ColumnName="Text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="CanteenAutomationSystemDbModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="RegisterAs" ColumnName="RegisterAs" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

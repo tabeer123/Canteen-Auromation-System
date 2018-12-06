@@ -12,7 +12,7 @@ namespace Canteen_Automation_System.Controllers
 {
     public class ChefController : Controller
     {
-        private CanteenAutomationSystemDbEntities2 db = new CanteenAutomationSystemDbEntities2();
+        private CanteenAutomationSystemDbEntities3 db = new CanteenAutomationSystemDbEntities3();
         // GET: Chef
         public ActionResult Index()
         {

@@ -1,4 +1,4 @@
-﻿
+﻿@model Canteen_Automation_System.Models.AccountViewModel
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -62,93 +62,101 @@
     }
 </style>
 
-<h2 class="writings">Login</h2>
-<div class="textbox">
-
-    <input type="text" class="form-control" placeholder="User Name">
-    <div style="height:20px"></div>
-
-    <input type="password" class="form-control" placeholder="Password">
-    <div style="height:20px"></div>
-
-    <button type="button" style="float:right;padding-right:30px"  class="btn btn-light" onclick="window.location='/Chef/Index'">LOGIN</button>
-    <div style="padding-right:20px"></div>
-    <button id="myBtn" class="btn btn-light">SIGN UP</button>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2>SignUp</h2>
-    </div>
-    <div class="modal-body">
-        <style>
-            .writings {
-                padding-top: 50px;
-                padding-left: 50px;
-                padding-right: 50px;
-            }
-
-            .textbox {
-                align-self: center;
-                padding: 40px;
-            }
-        </style>
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    <h2 class="writings">Login</h2>
         <div class="textbox">
 
-            <input type="text" class="form-control" placeholder="User Name">
+            <label for="Email">Email</label>
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
             <div style="height:20px"></div>
 
-            <input type="password" class="form-control" placeholder="Password">
+            <label for="Email">Password</label>
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
             <div style="height:20px"></div>
 
-            <input type="password" class="form-control" placeholder="Confirm Password">
-            <div style="height:20px"></div>
-
-            <select class="form-control" id="sel1">
-                <option>Register As</option>
-                <option>CHEF</option>
-                <option>ADMIN</option>
-            </select>
-            <div style="height:20px"></div>
-
-            <button type="button" style="float:right;padding-right:30px" class="btn btn-light">SIGNUP</button>
+            <button type="submit">LOGIN</button>
             <div style="padding-right:20px"></div>
+            </div>
+            }
+<button id="myBtn" class="btn btn-light">SIGN UP</button>
+
+
+            @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
+            {
+        <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                            <h2>SignUp</h2>
+                        </div>
+                        <div class="modal-body">
+                            <style>
+                                .writings {
+                                    padding-top: 50px;
+                                    padding-left: 50px;
+                                    padding-right: 50px;
+                                }
+
+                                .textbox {
+                                    align-self: center;
+                                    padding: 40px;
+                                }
+                            </style>
+                            <div class="textbox">
+
+                                <label for="Email">Email</label>
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                <div style="height:20px"></div>
+                                <label for="Password">Password</label>
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                <div style="height:20px"></div>
+                                <label for="Confirm Password">Confirm Password</label>
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+
+                                <div style="height:20px"></div>
+                                <label for="Register As">Register As</label>
+                                @Html.DropDownListFor(model => model.RegisterAs, new SelectList(new[] { "Admin", "Chef" }), new { @class = "form-control" })
+                                <div style="height:20px"></div>
+
+                                <button id="myBtn" type="submit">SIGN UP</button>
+                                <div style="padding-right:20px"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            }
+
+            <script>
+                // Get the modal
+                var modal = document.getElementById('myModal');
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks the button, open the modal
+                btn.onclick = function () {
+                    modal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
         </div>
-
-    </div>
-  </div>
-
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-</div>

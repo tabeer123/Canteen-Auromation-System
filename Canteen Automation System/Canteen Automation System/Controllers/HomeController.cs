@@ -9,7 +9,7 @@ namespace Canteen_Automation_System.Controllers
 {
     public class HomeController : Controller
     {
-        private CanteenAutomationSystemDbEntities2 db = new CanteenAutomationSystemDbEntities2();
+        private CanteenAutomationSystemDbEntities3 db = new CanteenAutomationSystemDbEntities3();
 
         public ActionResult Index()
         {
@@ -70,9 +70,59 @@ namespace Canteen_Automation_System.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Login(AccountViewModel user)
+        {
+            foreach(User u in db.Users)
+            { 
+                if(u.Email == user.Email && u.Password == user.Password)
+                {
+                    if(u.RegisterAs == "Admin")
+                    {
+                        ViewBag.listProduct = db.FoodItems;
+                        return View("../Admin/ManageFoodItems");
+                    }
+                    else
+                    {
+                        ViewBag.listProduct = db.Orders;
+                        return View("../Chef/Index");
+                    }
+                }
+            }
+            return View();
+        }
         public ActionResult SignUp()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult SignUp(AccountViewModel user)
+        {
+            try
+            {
+                User U = new User();
+                U.Email = user.Email;
+                U.Password = user.Password;
+                U.RegisterAs = user.RegisterAs;
+                db.Users.Add(U);
+                db.SaveChanges();
+                return View("Login");
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
+            }
         }
 
         public ActionResult CheckOut()
@@ -120,31 +170,39 @@ namespace Canteen_Automation_System.Controllers
 
 
         { 
-
-            if (Session["cart"] == null)
+            if(id == null && cartB == null)
             {
-                List<Cart> cart = new List<Cart>();
-        cart.Add(new Cart(db.FoodItems.Find(id), 1));
-                Session["cart"] = cart;
+                return View();
             }
             else
             {
-                List<Cart> cart = (List < Cart > )Session["cart"];
-                int index = isPresent(id);
-                if(index == -1)
+                if (Session["cart"] == null)
                 {
+                    List<Cart> cart = new List<Cart>();
                     cart.Add(new Cart(db.FoodItems.Find(id), 1));
-                   
+                    Session["cart"] = cart;
                 }
                 else
                 {
-                    cart[index].Quantity++;
-                }
-                
-                Session["cart"] = cart;
-            }
+                    List<Cart> cart = (List<Cart>)Session["cart"];
+                    int index = isPresent(id);
+                    if (index == -1)
+                    {
+                        cart.Add(new Cart(db.FoodItems.Find(id), 1));
 
-            return View("Cart");
+                    }
+                    else
+                    {
+                        cart[index].Quantity++;
+                    }
+
+                    Session["cart"] = cart;
+                }
+
+                return View("Cart");
+            }
         }
+
+
     }
 }

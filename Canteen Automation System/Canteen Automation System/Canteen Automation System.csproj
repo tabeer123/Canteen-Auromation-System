@@ -228,6 +228,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccountViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\FoodCategoryViewModel.cs" />
     <Compile Include="Models\FoodItemViewModel.cs" />
@@ -247,6 +248,9 @@
       <DependentUpon>CanteenAutomationSystem.tt</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="User.cs">
+      <DependentUpon>CanteenAutomationSystem.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="CanteenAutomationSystem.Context.tt">

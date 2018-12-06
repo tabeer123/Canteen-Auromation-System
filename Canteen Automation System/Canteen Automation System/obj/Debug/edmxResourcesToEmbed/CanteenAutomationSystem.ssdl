@@ -45,6 +45,15 @@
     <Property Name="ReviewId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="RegisterAs" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
   <Association Name="FK_Order">
     <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
     <End Role="OrderProducts" Type="Self.OrderProducts" Multiplicity="*" />
@@ -63,6 +72,7 @@
     <EntitySet Name="OrderProducts" EntityType="Self.OrderProducts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Order" Association="Self.FK_Order">
       <End Role="Orders" EntitySet="Orders" />
       <End Role="OrderProducts" EntitySet="OrderProducts" />

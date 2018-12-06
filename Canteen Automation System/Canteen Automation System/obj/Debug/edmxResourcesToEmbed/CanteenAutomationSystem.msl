@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="CanteenAutomationSystemDbModelStoreContainer" CdmEntityContainer="CanteenAutomationSystemDbEntities2">
+  <EntityContainerMapping StorageEntityContainer="CanteenAutomationSystemDbModelStoreContainer" CdmEntityContainer="CanteenAutomationSystemDbEntities3">
     <EntitySetMapping Name="Categories">
       <EntityTypeMapping TypeName="CanteenAutomationSystemDbModel.Category">
         <MappingFragment StoreEntitySet="Categories">
@@ -48,6 +48,16 @@
         <MappingFragment StoreEntitySet="Reviews">
           <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
           <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="CanteenAutomationSystemDbModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RegisterAs" ColumnName="RegisterAs" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
