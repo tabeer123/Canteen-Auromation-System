@@ -18,7 +18,7 @@
             <th>Name </th>
             <th>Description</th>
             <th>Price</th>
-            <th>Quantity</th>
+            @*<th>Quantity</th>*@
             <th>Add to Cart </th>
         </tr>
         @foreach (FoodItem f in ViewBag.listProduct)
@@ -29,7 +29,7 @@
                 <td>@f.Name</td>
                 <td>@f.Category</td>
                 <td>@f.Price</td>
-                <td>@Html.TextBoxFor(model => model.Quantity, new { @type = "number", @value = 1, @max = 1, @min = 1 })</td>
+                @*<td>@Html.TextBoxFor(model => model.Quantity, new { @type = "number", @value = 1, @max = 1, @min = 1 })</td>*@
                
                 <td align="center">@Html.ActionLink("Add to Cart", "Cart", "Home", new { id = f.FoodId }, null)</td>
 </tr>

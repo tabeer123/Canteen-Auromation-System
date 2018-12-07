@@ -19,7 +19,7 @@ namespace Canteen_Automation_System.Controllers
         }
         public ActionResult About()
         {
-            
+
             ViewBag.Message = "Your application description page.";
 
             return View();
@@ -43,7 +43,7 @@ namespace Canteen_Automation_System.Controllers
             try
             {
                 Review review = new Review();
-                review.Text= obj.Text;
+                review.Text = obj.Text;
                 db.Reviews.Add(review);
                 db.SaveChanges();
                 return RedirectToAction("Login");
@@ -73,11 +73,11 @@ namespace Canteen_Automation_System.Controllers
         [HttpPost]
         public ActionResult Login(AccountViewModel user)
         {
-            foreach(User u in db.Users)
-            { 
-                if(u.Email == user.Email && u.Password == user.Password)
+            foreach (User u in db.Users)
+            {
+                if (u.Email == user.Email && u.Password == user.Password)
                 {
-                    if(u.RegisterAs == "Admin")
+                    if (u.RegisterAs == "Admin")
                     {
                         ViewBag.listProduct = db.FoodItems;
                         return View("../Admin/ManageFoodItems");
@@ -127,30 +127,48 @@ namespace Canteen_Automation_System.Controllers
 
         public ActionResult CheckOut()
         {
-            ViewBag.listProduct = db.FoodItems.ToList();
-            Order order = new Order();
-            order.Date = DateTime.Now;
-            order.Status = "pending";
-            order.Bill = 1000;
-            List<Cart> cart = (List<Cart>)Session["cart"];
-            order.Items = cart.ToArray().Length;
-            db.Orders.Add(order);
-            db.SaveChanges();
-            int r = order.OrderId;
-            for (int j = 0; j < cart.Count; j++)
+            try
             {
-                FoodItem F = db.FoodItems.Find(cart[j].NewFood1.FoodId);
-                OrderProduct orderProduct = new OrderProduct();
-                orderProduct.OrderId = r;
-                orderProduct.ProductName = F.Name;
-                orderProduct.Quantity = cart[j].Quantity;
-                orderProduct.Price = F.Price;
-                orderProduct.Category = F.Category;
-                db.OrderProducts.Add(orderProduct);
+                ViewBag.listProduct = db.FoodItems.ToList();
+                Order order = new Order();
+                order.Date = DateTime.Now;
+                order.Status = "pending";
+                order.Bill = 1000;
+                List<Cart> cart = (List<Cart>)Session["cart"];
+                order.Items = cart.ToArray().Length;
+                db.Orders.Add(order);
                 db.SaveChanges();
+                int r = order.OrderId;
+                for (int j = 0; j < cart.Count; j++)
+                {
+                    FoodItem F = db.FoodItems.Find(cart[j].NewFood1.FoodId);
+                    OrderProduct orderProduct = new OrderProduct();
+                    orderProduct.OrderId = r;
+                    orderProduct.ProductName = F.Name;
+                    orderProduct.Quantity = cart[j].Quantity;
+                    orderProduct.Price = F.Price;
+                    orderProduct.Category = F.Category;
+                    db.OrderProducts.Add(orderProduct);
+                    db.SaveChanges();
+                }
+                Session["cart"] = null;
+                return View("Index");
             }
-            Session["cart"] = null;
-            return View("Index");
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
+            }
         }
         private int isPresent(int id)
         {
@@ -161,48 +179,66 @@ namespace Canteen_Automation_System.Controllers
                 {
                     return j;
                 }
-               
+
             }
             return -1;
 
         }
-        public ActionResult Cart(int id,Cart cartB)
+        public ActionResult Cart(int id, Cart cartB)
 
 
-        { 
-            if(id == null && cartB == null)
+        {
+            try
             {
-                return View();
-            }
-            else
-            {
-                if (Session["cart"] == null)
+                if (id == null && cartB == null)
                 {
-                    List<Cart> cart = new List<Cart>();
-                    cart.Add(new Cart(db.FoodItems.Find(id), 1));
-                    Session["cart"] = cart;
+                    return View();
                 }
                 else
                 {
-                    List<Cart> cart = (List<Cart>)Session["cart"];
-                    int index = isPresent(id);
-                    if (index == -1)
+                    if (Session["cart"] == null)
                     {
+                        List<Cart> cart = new List<Cart>();
                         cart.Add(new Cart(db.FoodItems.Find(id), 1));
-
+                        Session["cart"] = cart;
                     }
                     else
                     {
-                        cart[index].Quantity++;
+                        List<Cart> cart = (List<Cart>)Session["cart"];
+                        int index = isPresent(id);
+                        if (index == -1)
+                        {
+                            cart.Add(new Cart(db.FoodItems.Find(id), 1));
+
+                        }
+                        else
+                        {
+                            cart[index].Quantity++;
+                        }
+
+                        Session["cart"] = cart;
                     }
 
-                    Session["cart"] = cart;
+                    return View("Cart");
                 }
-
-                return View("Cart");
             }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
+            }
+
+
         }
-
-
     }
 }
