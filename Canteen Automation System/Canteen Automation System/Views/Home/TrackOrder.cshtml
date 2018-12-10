@@ -1,10 +1,77 @@
-﻿
+﻿@model List< Canteen_Automation_System.OrderProduct>
 @{
     ViewBag.Title = "TrackOrder";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h2>Track Your Order Here</h2>
+
 <style>
+    
+ .writings{
+        padding-top:50px;
+        padding-left:50px;
+        padding-right:50px;
+    }
+    .textbox{
+        align-self:center;
+        padding:40px;
+    }
+    .table {
+        padding: 40px;
+    }
+</style>
+
+
+<div class="textbox">
+
+    
+    
+    @using (@Html.BeginForm("TrackOrder", "Home", FormMethod.Post))
+    {
+        @Html.TextBox("id")
+        <input type="submit" value="Search" />
+        <div style="height:20px"></div>
+
+    }
+</div>
+
+<div style="padding-left:40px; padding-right:40px">
+    <table class="table table-bordered table-responsive table-hover">
+        <tr class="table">
+            @*<th>Status </th>*@
+            <th>Order ID </th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+           
+
+        </tr>
+        @foreach (OrderProduct OrderP in ViewBag.Filterthroughid)
+        {
+            <tr>
+                @*<td>@OrderP.Order.Status</td>*@
+                <td>@OrderP.OrderId</td>
+                <td>@OrderP.ProductName</td>
+                <td>@OrderP.Price</td>
+                <td>@OrderP.Quantity</td>
+
+
+
+
+               
+            </tr>
+        }
+
+
+    </table>
+</div>
+<button id="myBtn" type="submit">Cancel Order</button>
+<div style="padding-right:20px"></div>
+<div style="height:60px"></div>
+    
+
+@*<style>
  .writings{
         padding-top:50px;
         padding-left:50px;
@@ -151,4 +218,4 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-</script>
+</script>*@

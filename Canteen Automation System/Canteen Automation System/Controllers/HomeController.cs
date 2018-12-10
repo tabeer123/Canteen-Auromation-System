@@ -27,8 +27,69 @@ namespace Canteen_Automation_System.Controllers
 
         public ActionResult TrackOrder()
         {
-
+            ViewBag.Filterthroughid = ""; ;
+            //OrderProductView p = new OrderProductView();
+            //p.Orderid = 0;
+            //p.price =0;
+            //p.Productid = 0;
+            //p.Productname = "";
+            //p.quantity = 0;
+            //p.category = "";
             return View();
+
+        }
+        [HttpPost]
+        public ActionResult TrackOrder(string id)
+        {
+            try
+            {
+                //return View(db.OrderProducts.Where(x => x.OrderId == Convert.ToInt32(id) || id == null).ToString());
+                if (id == null)
+                {
+                    return HttpNotFound();
+
+                }
+                else
+                {
+                    List<OrderProduct> prodeuctlist = new List<OrderProduct>();
+                    foreach (OrderProduct Order in db.OrderProducts)
+                    {
+                        if (Order.OrderId == Convert.ToInt32(id))
+                        {
+                            OrderProduct Oproduct = new OrderProduct();
+                            //Oproduct.Order.Status = Order.Order.Status;
+                            Oproduct.OrderId = Order.OrderId;
+                            Oproduct.ProductId = Order.ProductId;
+                            Oproduct.Price = Order.Price;
+                            Oproduct.Category = Order.Category;
+                            Oproduct.ProductName = Order.ProductName;
+                            Oproduct.Quantity = Order.Quantity;
+                            prodeuctlist.Add(Oproduct);
+
+
+                        }
+
+                    }
+                    ViewBag.Filterthroughid = prodeuctlist;
+                    return View(prodeuctlist.ToList());
+                }
+
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
+            }
         }
 
         public ActionResult Review()

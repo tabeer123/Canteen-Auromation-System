@@ -8,11 +8,11 @@ namespace Canteen_Automation_System.Models
 {
     public class FoodCategoryViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Please Enter Name of Food Category")]
         [Display(Name = "Name")]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Enter Food Category Description")]
         [Display(Name = "Description")]
         public string Description { get; set; }
     }

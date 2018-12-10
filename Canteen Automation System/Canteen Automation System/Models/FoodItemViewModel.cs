@@ -9,13 +9,13 @@ namespace Canteen_Automation_System.Models
 {
     public class FoodItemViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Please Select Food Category")]
         [Display(Name = "Category")]
         public string Category { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Please Enter Food Name")]
         [Display(Name = "Name")]
         public string Name { get; set; }
-        [Required]
+        [Range(1, 1000, ErrorMessage = "Price must be between $1 and $1000")]
         [Display(Name = "Price")]
         public double Price { get; set; }
     }
