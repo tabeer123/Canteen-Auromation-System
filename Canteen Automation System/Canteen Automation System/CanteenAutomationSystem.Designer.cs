@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Nimra\Desktop\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\CanteenAutomationSystem.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\DELL\Desktop\CAS\Canteen-Auromation-System\Canteen Automation System\Canteen Automation System\CanteenAutomationSystem.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

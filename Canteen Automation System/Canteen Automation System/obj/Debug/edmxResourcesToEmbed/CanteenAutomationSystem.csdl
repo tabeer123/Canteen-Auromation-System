@@ -68,7 +68,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="CanteenAutomationSystemDbEntities3" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="CanteenAutomationSystemDbEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Categories" EntityType="Self.Category" />
     <EntitySet Name="FoodItems" EntityType="Self.FoodItem" />
     <EntitySet Name="OrderProducts" EntityType="Self.OrderProduct" />

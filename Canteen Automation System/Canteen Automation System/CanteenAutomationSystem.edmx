@@ -156,7 +156,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="CanteenAutomationSystemDbEntities3" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CanteenAutomationSystemDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="FoodItems" EntityType="Self.FoodItem" />
           <EntitySet Name="OrderProducts" EntityType="Self.OrderProduct" />
@@ -173,7 +173,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CanteenAutomationSystemDbModelStoreContainer" CdmEntityContainer="CanteenAutomationSystemDbEntities3">
+        <EntityContainerMapping StorageEntityContainer="CanteenAutomationSystemDbModelStoreContainer" CdmEntityContainer="CanteenAutomationSystemDbEntities">
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="CanteenAutomationSystemDbModel.Category">
               <MappingFragment StoreEntitySet="Categories">

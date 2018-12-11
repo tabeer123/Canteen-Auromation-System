@@ -10,7 +10,7 @@ namespace Canteen_Automation_System.Controllers
 {
     public class AdminController : Controller
     {
-        private CanteenAutomationSystemDbEntities3 db = new CanteenAutomationSystemDbEntities3();
+        private CanteenAutomationSystemDbEntities db = new CanteenAutomationSystemDbEntities();
         // GET: Admin
         public ActionResult Index()
         {

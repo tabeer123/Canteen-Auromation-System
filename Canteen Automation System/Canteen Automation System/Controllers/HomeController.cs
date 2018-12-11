@@ -9,7 +9,9 @@ namespace Canteen_Automation_System.Controllers
 {
     public class HomeController : Controller
     {
-        private CanteenAutomationSystemDbEntities3 db = new CanteenAutomationSystemDbEntities3();
+        private CanteenAutomationSystemDbEntities db = new CanteenAutomationSystemDbEntities();
+
+        int CurrentOrderTrackID;
 
         public ActionResult Index()
         {
@@ -27,14 +29,7 @@ namespace Canteen_Automation_System.Controllers
 
         public ActionResult TrackOrder()
         {
-            ViewBag.Filterthroughid = ""; ;
-            //OrderProductView p = new OrderProductView();
-            //p.Orderid = 0;
-            //p.price =0;
-            //p.Productid = 0;
-            //p.Productname = "";
-            //p.quantity = 0;
-            //p.category = "";
+            ViewBag.Filterthroughid = "";
             return View();
 
         }
@@ -44,14 +39,16 @@ namespace Canteen_Automation_System.Controllers
             try
             {
                 //return View(db.OrderProducts.Where(x => x.OrderId == Convert.ToInt32(id) || id == null).ToString());
-                if (id == null)
+                if (id == "")
                 {
                     return HttpNotFound();
 
                 }
                 else
                 {
-                    List<OrderProduct> prodeuctlist = new List<OrderProduct>();
+                    CurrentOrderTrackID = Convert.ToInt32(id);
+                    Order order = new Order();
+                    List<OrderProduct> productlist = new List<OrderProduct>();
                     foreach (OrderProduct Order in db.OrderProducts)
                     {
                         if (Order.OrderId == Convert.ToInt32(id))
@@ -64,14 +61,24 @@ namespace Canteen_Automation_System.Controllers
                             Oproduct.Category = Order.Category;
                             Oproduct.ProductName = Order.ProductName;
                             Oproduct.Quantity = Order.Quantity;
-                            prodeuctlist.Add(Oproduct);
+                            productlist.Add(Oproduct);
 
 
                         }
 
                     }
-                    ViewBag.Filterthroughid = prodeuctlist;
-                    return View(prodeuctlist.ToList());
+                    int r = Convert.ToInt32(id);
+                    order = db.Orders.Find(Convert.ToInt32(id));
+                    if (order == null)
+                    {
+                        ViewBag.NULL = true;
+                    }
+                    else
+                    {
+                        ViewBag.orderStatus = order.Status;
+                    }
+                    ViewBag.Filterthroughid = productlist;
+                    return View(productlist.ToList());
                 }
 
             }
@@ -91,6 +98,41 @@ namespace Canteen_Automation_System.Controllers
                 throw raise;
             }
         }
+        [HttpPost]
+        public ActionResult CancelOrder()
+        {
+            foreach(OrderProduct OP in db.OrderProducts)
+            {
+                if(OP.OrderId ==1)
+                {
+                    try
+                    {
+                        db.OrderProducts.Remove(OP);
+                    }
+                    catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                    {
+                        Exception raise = dbEx;
+                        foreach (var validationErrors in dbEx.EntityValidationErrors)
+                        {
+                            foreach (var validationError in validationErrors.ValidationErrors)
+                            {
+                                string message = string.Format("{0}:{1}",
+                                    validationErrors.Entry.Entity.ToString(),
+                                    validationError.ErrorMessage);
+                                raise = new InvalidOperationException(message, raise);
+                            }
+                        }
+                        throw raise;
+                    }
+                }
+            }
+            db.SaveChanges();
+            db.Orders.Remove(db.Orders.Find(1));
+            db.SaveChanges();
+            ViewBag.listProduct = db.FoodItems.ToList();
+            return View("Index");
+        }
+        
 
         public ActionResult Review()
         {

@@ -4,8 +4,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Track Your Order Here</h2>
-
 <style>
     
  .writings{
@@ -22,56 +20,9 @@
     }
 </style>
 
-
-<div class="textbox">
-
-    
-    
-    @using (@Html.BeginForm("TrackOrder", "Home", FormMethod.Post))
-    {
-        @Html.TextBox("id")
-        <input type="submit" value="Search" />
-        <div style="height:20px"></div>
-
-    }
-</div>
-
-<div style="padding-left:40px; padding-right:40px">
-    <table class="table table-bordered table-responsive table-hover">
-        <tr class="table">
-            @*<th>Status </th>*@
-            <th>Order ID </th>
-            <th>Product Name</th>
-            <th>Price</th>
-            <th>Quantity</th>
-           
-
-        </tr>
-        @foreach (OrderProduct OrderP in ViewBag.Filterthroughid)
-        {
-            <tr>
-                @*<td>@OrderP.Order.Status</td>*@
-                <td>@OrderP.OrderId</td>
-                <td>@OrderP.ProductName</td>
-                <td>@OrderP.Price</td>
-                <td>@OrderP.Quantity</td>
-
-
-
-
-               
-            </tr>
-        }
-
-
-    </table>
-</div>
-<button id="myBtn" type="submit">Cancel Order</button>
-<div style="padding-right:20px"></div>
-<div style="height:60px"></div>
     
 
-@*<style>
+<style>
  .writings{
         padding-top:50px;
         padding-left:50px;
@@ -129,68 +80,83 @@
     }
 </style>
 
-<h2 class="writing">Track Your Order Here</h2>
+
 <div class="textbox">
 
-    <input type="text" class="form-control" placeholder="Track Your Order">
-    <div style="height:20px"></div>
+    <h2 class="writing">Track Your Order Here</h2>
 
-    <button id="myBtn" type="button" style="float:right" class="btn btn-light">TRACK ORDER</button>
-</div>
+    @{ 
+        int ID;
+    }
+    @using (@Html.BeginForm("TrackOrder", "Home", FormMethod.Post))
+    {
+        @Html.TextBox("id")
+        <input id="myBtn" type="submit" value="Track Order" class="btn btn-light"/>
+        <div style="height:20px"></div>
+
+            }
+
+
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
+    @{
+        if (ViewBag.NULL == true)
+        {
+            <div class="modal-content" style="height:200px">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Order Under this ID was not found</h2>
+                </div>
+                </div>
+                }
+                else
+                {
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Your Order Details</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="textbox">
+                            <p>Your Order Status</p>
+                            <p style="font-weight:bold">@ViewBag.orderStatus</p>
+                            <div style="height:10px;"></div>
+                            <!--Table showing the contents of your order is shown here in the table-->
+                            <table class="table table-bordered table-responsive table-hover">
+                                <tr class="table">
+                                    <th>Name </th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                </tr>
+                                @foreach (OrderProduct OrderP in ViewBag.Filterthroughid)
+                                {
+                                    <tr>
+                                        <td>@OrderP.ProductName</td>
+                                        <td>@OrderP.Category</td>
+                                        <td>@OrderP.Price</td>
+                                        <td>@OrderP.Quantity</td>
+                                    </tr>
+                                }
 
-    <!-- Modal content -->
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-            <h2>Your Order Details</h2>
-        </div>
-        <div class="modal-body">
-            <div class="textbox">
-                <p>Your Order Status</p>
-                <p style="font-weight:bold">Pending</p>
-                <div style="height:10px;"></div>
-                <!--Table showing the contents of your order is shown here in the table-->
-                <table class="table table-bordered table-responsive table-hover">
-                    <tr class="table">
-                        <th>Name </th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                    </tr>
-                    <tr>
-                        <td>Burger</td>
-                        <td>What could be the description</td>
-                        <td>40.98</td>
-                        <td>4</td>
+                            </table>
+                            @using (@Html.BeginForm("CancelOrder", "Home", FormMethod.Post))
+                {
+                                <button type="submit" style="float:right;padding-right:30px" class="btn btn-light">Cancel Order</button>
+                            }
+                            <div style="padding-right:20px"></div>
+                            <div style="height:60px"></div>
+                        </div>
 
-                    </tr>
-                    <tr>
-                        <td>Pizza</td>
-                        <td>Large Fajita</td>
-                        <td>40.98</td>
-                        <td>1</td>
+                    </div>
+                </div>
+                }
+                }
+                <!-- Modal content -->
 
-                    </tr>
-                    <tr>
-                        <td>Garlic Bread</td>
-                        <td>Description containing cheese</td>
-                        <td>40.98</td>
-                        <td>2</td>
 
-                    </tr>
-
-                </table>
-                <button type="button" style="float:right;padding-right:30px" class="btn btn-light">CANCEL ORDER</button>
-                <div style="padding-right:20px"></div>
             </div>
-
-        </div>
-    </div>
-
-</div>
 
 <script>
 // Get the modal
@@ -206,6 +172,9 @@ var span = document.getElementsByClassName("close")[0];
 btn.onclick = function() {
     modal.style.display = "block";
 }
+{
+    modal.style.display = "block";
+}
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
@@ -218,4 +187,4 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-</script>*@
+</script>

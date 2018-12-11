@@ -13,10 +13,10 @@ namespace Canteen_Automation_System
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CanteenAutomationSystemDbEntities3 : DbContext
+    public partial class CanteenAutomationSystemDbEntities : DbContext
     {
-        public CanteenAutomationSystemDbEntities3()
-            : base("name=CanteenAutomationSystemDbEntities3")
+        public CanteenAutomationSystemDbEntities()
+            : base("name=CanteenAutomationSystemDbEntities")
         {
         }
     
