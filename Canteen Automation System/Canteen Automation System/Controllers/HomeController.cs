@@ -103,7 +103,7 @@ namespace Canteen_Automation_System.Controllers
         {
             foreach(OrderProduct OP in db.OrderProducts)
             {
-                if(OP.OrderId ==1)
+                if(OP.OrderId ==2)
                 {
                     try
                     {
@@ -127,7 +127,7 @@ namespace Canteen_Automation_System.Controllers
                 }
             }
             db.SaveChanges();
-            db.Orders.Remove(db.Orders.Find(1));
+            db.Orders.Remove(db.Orders.Find(2));
             db.SaveChanges();
             ViewBag.listProduct = db.FoodItems.ToList();
             return View("Index");
@@ -182,6 +182,13 @@ namespace Canteen_Automation_System.Controllers
                 {
                     if (u.RegisterAs == "Admin")
                     {
+                        List<string> categories = new List<string>();
+                        foreach (Category c in db.Categories)
+                        {
+                            categories.Add(c.Name);
+                        }
+                        categories.Sort();
+                        ViewBag.Categories = categories;
                         ViewBag.listProduct = db.FoodItems;
                         return View("../Admin/ManageFoodItems");
                     }
