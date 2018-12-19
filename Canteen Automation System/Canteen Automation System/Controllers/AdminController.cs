@@ -27,7 +27,8 @@ namespace Canteen_Automation_System.Controllers
             }
             categories.Sort();
             ViewBag.Categories = categories;
-            ViewBag.listProduct = db.FoodItems.ToList();
+            List<FoodItem> list = db.FoodItems.OrderBy(o => o.Name).ToList();
+            ViewBag.listProduct = list;
 
             return View();
         }
@@ -74,8 +75,8 @@ namespace Canteen_Automation_System.Controllers
 
         public ActionResult ManageFoodCategories()
         {
-            ViewBag.listProduct = db.Categories.ToList();
-
+            List<Category> list = db.Categories.OrderBy(o => o.Name).ToList();
+            ViewBag.listProduct = list;
             return View();
         }
 

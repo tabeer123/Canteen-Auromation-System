@@ -15,8 +15,8 @@ namespace Canteen_Automation_System.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.listProduct = db.FoodItems.ToList();
-
+            List<FoodItem> list = db.FoodItems.OrderBy(o => o.Name).ToList();
+            ViewBag.listProduct = list;
             return View();
         }
         public ActionResult About()
@@ -208,15 +208,40 @@ namespace Canteen_Automation_System.Controllers
         [HttpPost]
         public ActionResult SignUp(AccountViewModel user)
         {
+            bool isPresent = false;
+            foreach(User u in db.Users)
+            {
+                if(user.Email == u.Email)
+                {
+                    isPresent = true;
+                }
+            }
             try
             {
-                User U = new User();
-                U.Email = user.Email;
-                U.Password = user.Password;
-                U.RegisterAs = user.RegisterAs;
-                db.Users.Add(U);
-                db.SaveChanges();
-                return View("Login");
+                if (!isPresent)
+                {
+                    if(user.Password.Length > 5 && user.Password.Length < 15)
+                    {
+                        User U = new User();
+                        U.Email = user.Email;
+                        U.Password = user.Password;
+                        U.RegisterAs = user.RegisterAs;
+                        db.Users.Add(U);
+                        db.SaveChanges();
+                        ViewBag.ER1 = "";
+                        return View("Login");
+                    }
+                    else
+                    {
+                        ViewBag.ERP = "Password should be atleast 5 and atmost 15 characters long ";
+                        return View("Login");
+                    }
+                }
+                else
+                {
+                    ViewBag.ER1 = "Username already exists";
+                    return View("Login");
+                }
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
             {

@@ -14,6 +14,7 @@ namespace Canteen_Automation_System.Models
         public string Category { get; set; }
         [Required(ErrorMessage = "Please Enter Food Name")]
         [Display(Name = "Name")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
         public string Name { get; set; }
         [Range(1, 1000, ErrorMessage = "Price must be between $1 and $1000")]
         [Display(Name = "Price")]

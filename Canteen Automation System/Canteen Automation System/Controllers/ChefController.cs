@@ -16,7 +16,8 @@ namespace Canteen_Automation_System.Controllers
         // GET: Chef
         public ActionResult Index()
         {
-            ViewBag.listProduct = db.Orders.ToList();
+            List<Order> list = db.Orders.OrderBy(o => o.Date).ToList();
+            ViewBag.listProduct = list;
 
             return View();
         }

@@ -95,6 +95,7 @@
             <div class="textbox">
                 @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name)
                 <div style="height:20px"></div>
 
 
@@ -166,7 +167,6 @@ window.onclick = function(event) {
 <div style="padding-left:40px; padding-right:40px">
     <table class="table table-bordered table-responsive table-hover">
         <tr class="table">
-            <th>ID </th>
             <th>Name </th>
             <th>Description</th>
             <th>Price</th>
@@ -175,7 +175,6 @@ window.onclick = function(event) {
         @foreach (FoodItem f in ViewBag.listProduct)
         {
             <tr>
-                <td>@f.FoodId</td>
                 <td>@f.Name</td>
                 <td>@f.Category</td>
                 <td>@f.Price</td>

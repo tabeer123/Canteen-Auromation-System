@@ -51,9 +51,15 @@
     </table>
     <br /><br />
     @Html.ActionLink("Countinue Odering", "Index", "Home")
-    @Html.ActionLink("CheckOut", "CheckOut", "Home")
+    @Html.ActionLink("CheckOut", "CheckOut", "Home" , new { id = "checkout" })
 
     <p>Your Total Bill</p>
     <p>@totalPrice</p>
 </div>
 <div style="height:60px"></div>
+<script>
+    var link = document.getElementById("checkout");
+    link.onclick = function () {
+        alert("Your Order has been dispatched and your order ID is" + 2)
+    }
+</script>
